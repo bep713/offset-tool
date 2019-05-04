@@ -351,3 +351,19 @@ textarea {
 
 .offset-match {
   background-color: #e98819; }
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  padding: 10px 50px;
+  z-index: 3;
+  background-color: #F4F4F4;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid #333;
+}
+
+.hidden {
+  display: none;
+}

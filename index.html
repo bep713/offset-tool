@@ -16,14 +16,24 @@
       <div class="content-header">
         <div class="length-wrapper">
           <label for="length">Length</label>
-          <input id="length" type="text">
+          <input id="length" class="length" type="text">
         </div>
         <div class="offset-wrapper">
           <label for="offset">Offset</label>
-          <input id="offset" type="text" disabled>
+          <input id="offset" class="offset" type="text" disabled>
         </div>
       </div>
       <div class="content-main"></div>
+    </div>
+    <div class="content-header content-header-offscreen sticky hidden">
+      <div class="length-wrapper">
+        <label for="length">Length</label>
+        <input id="length-offscreen" class="length" type="text">
+      </div>
+      <div class="offset-wrapper">
+        <label for="offset">Offset</label>
+        <input id="offset-offsceen" class="offset" type="text" disabled>
+      </div>
     </div>
   </div>
   <script src="./offsetToolService.js"></script>

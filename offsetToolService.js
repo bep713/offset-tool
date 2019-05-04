@@ -10,10 +10,30 @@ function buildSearchRow() {
   const mainContent = document.querySelector('.content-main');
   const searchRowIndex = mainContent.querySelectorAll('.search-row').length;
 
-  const length = document.querySelector('#length');
-  length.addEventListener('input', function () {
+  const lengthElements = document.querySelectorAll('.content-header .length');
+  lengthElements[0].addEventListener('input', function () {
+    lengthElements[1].value = this.value;
     runSearch();
   });
+
+  lengthElements[1].addEventListener('input', function () {
+    lengthElements[0].value = this.value;
+    runSearch();
+  });
+
+  const contentHeader = document.querySelector('.content-header-offscreen');
+
+  window.addEventListener('scroll', function () {
+    if (contentHeader.classList.contains('hidden') && window.scrollY > contentHeader.offsetTop + contentHeader.offsetHeight) {
+      contentHeader.classList.remove('hidden');
+    }
+
+    if (!contentHeader.classList.contains('hidden') && window.scrollY <= contentHeader.offsetTop + contentHeader.offsetHeight) {
+      contentHeader.classList.add('hidden');
+    }
+  });
+
+  const offScreenLength = document.querySelector('.content-header-offscreen ')
 
   const searchRow = document.createElement('div');
   searchRow.classList.add('search-row');
@@ -243,8 +263,10 @@ function runSearch() {
   });
 
   let intersects = intersection(indices);
-  const offsetElement = document.querySelector('#offset');
-  offsetElement.value = intersects;
+  const offsetElements = document.querySelectorAll('.content-header .offset');
+  offsetElements.forEach((offsetElement) => {
+    offsetElement.value = intersects;
+  });
 
   if (intersects.length > 0) {
     const firstIntersect = intersects[0];
