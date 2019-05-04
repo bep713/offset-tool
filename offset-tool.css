@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 0 10px; }
+  @media (min-width: 768px) {
+    body {
+      padding: 0 20px; } }
+  @media (min-width: 1280px) {
+    body {
+      padding: 0 50px; } }
+
+h1 {
+  font-size: 1.5em;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em; }
+
+:focus {
+  outline-color: #e98819; }
+
+.hidden {
+  display: none; }
+
+.app-brand {
+  height: 50px;
+  background-color: #e98819;
+  margin: -50px -50px 0 -50px; }
+
+.welcome {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-family: 'Roboto', sans-serif;
+  padding: 40px;
+  background-color: #e9e9e9; }
+  .welcome h1 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    letter-spacing: 0.05em; }
+  .welcome ul {
+    display: inline-block;
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0; }
+  .welcome li + li {
+    margin-top: 5px; }
+  .welcome .app-title {
+    height: 50px;
+    background-color: #e98819;
+    margin: -40px -40px 0 -40px;
+    padding: 40px 0 100px 40px;
+    color: #fff; }
+    .welcome .app-title h1 {
+      margin-bottom: 0;
+      font-size: 36px; }
+    .welcome .app-title .version {
+      font-size: 14px;
+      font-style: italic; }
+  .welcome .link-item {
+    color: #0066cc;
+    cursor: pointer; }
+    .welcome .link-item:hover {
+      color: #004d99; }
+  .welcome .file-path {
+    color: #333; }
+  .welcome .time {
+    color: #333;
+    font-style: italic;
+    font-size: 14px; }
+  .welcome > div + div {
+    margin-top: 50px; }
+
+.header {
+  padding: 20px; }
+  .header .top-bar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px; }
+  .header .info-bar {
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between; }
+    .header .info-bar .right-action-buttons {
+      display: flex; }
+      .header .info-bar .right-action-buttons .action-button + .action-button {
+        margin-left: 50px; }
+  .header .action-button {
+    color: #0079c1;
+    cursor: pointer; }
+    .header .action-button:hover {
+      color: #00598e; }
+
+.schedule-wrapper {
+  margin-top: 10px; }
+
+.games-wrapper {
+  margin: 10px 0; }
+  @media (min-width: 768px) {
+    .games-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1024px) {
+    .games-wrapper {
+      grid-template-columns: 1fr 1fr 1fr; } }
+
+.game {
+  border: 1px solid #e6e6e6;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 20px 44px 20px 30px;
+  margin: 0 -1px -1px 0; }
+  .game:nth-child(2n) {
+    background-color: #F4F4F4; }
+  @media (min-width: 768px) {
+    .game:nth-child(n+3) {
+      background-color: #FFF; }
+    .game:nth-child(4n+3) {
+      background-color: #F4F4F4; }
+    .game:nth-child(2n) {
+      background-color: #F4F4F4; }
+    .game:nth-child(4n) {
+      background-color: #FFF; } }
+  @media (min-width: 1024px) {
+    .game:nth-child(n+3) {
+      background-color: inherit; }
+    .game:nth-child(4n+3) {
+      background-color: inherit; }
+    .game:nth-child(4n) {
+      background-color: inherit; }
+    .game:nth-child(2n) {
+      background-color: #F4F4F4; } }
+  @media (min-width: 1280px) {
+    .game {
+      padding: 20px 74px 20px 60px; } }
+  @media (min-width: 768px) {
+    .game > div {
+      padding: 5px; } }
+
+.home-team-wrapper {
+  grid-column: 1; }
+
+.day-wrapper {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  .day-wrapper .selectr-selected {
+    text-align: right; }
+  .day-wrapper .selectr-container {
+    width: 100px; }
+
+.time-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; }
+  .time-wrapper div + div {
+    margin-left: 5px; }
+  .time-wrapper input {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    background-color: inherit;
+    border-color: transparent;
+    border-radius: 3px;
+    border-width: 1px;
+    padding: 5px; }
+    .time-wrapper input:hover, .time-wrapper input:active, .time-wrapper input:focus {
+      border-color: #333;
+      margin-right: 0; }
+    .time-wrapper input::-webkit-clear-button {
+      display: none; }
+    .time-wrapper input::-webkit-inner-spin-button {
+      margin-left: 7px;
+      opacity: 1; }
+
+.team-name {
+  border: none; }
+
+.week-selection-wrapper {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center; }
+
+.week-wrapper {
+  display: flex;
+  overflow-x: auto; }
+  .week-wrapper .week {
+    padding: 20px;
+    color: #0066cc;
+    cursor: pointer; }
+    .week-wrapper .week:hover {
+      background-color: #F4F4F4; }
+    .week-wrapper .week.active {
+      color: #333;
+      background-color: #F4F4F4; }
+    .week-wrapper .week + .week {
+      margin-left: 20px; }
+
+.selectr-selected {
+  background-color: inherit;
+  border-color: transparent; }
+  .selectr-selected:hover, .selectr-selected:focus, .selectr-selected:active {
+    border-color: #333; }
+    .selectr-selected:hover:before, .selectr-selected:focus:before, .selectr-selected:active:before {
+      display: inherit; }
+
+.selectr-container.open .selectr-selected:before {
+  display: inherit; }
+
+.selectr-container input[type="search"]::-webkit-search-decoration,
+.selectr-container input[type="search"]::-webkit-search-cancel-button,
+.selectr-container input[type="search"]::-webkit-search-results-button,
+.selectr-container input[type="search"]::-webkit-search-results-decoration {
+  display: none; }
+
+.context-menu {
+  width: 150px;
+  position: absolute;
+  z-index: 2;
+  border: 1px solid #333;
+  background: #FFF; }
+  .context-menu ul {
+    list-style: none;
+    margin: 2px 0;
+    padding: 0; }
+    .context-menu ul li {
+      padding: 10px;
+      text-align: center;
+      cursor: default; }
+      .context-menu ul li:hover {
+        background: #D1D1D1; }
+
+.hex-view-wrapper {
+  position: absolute;
+  z-index: 2; }
+
+.hex-view {
+  width: 500px;
+  padding: 20px;
+  background-color: #FFF;
+  border: 1px solid #D1D1D1; }
+
+.hex-view-text {
+  padding: 10px;
+  width: 100%;
+  font-size: 1em; }
+
+.save-hex {
+  width: 100%;
+  padding: 10px; }
+
+.header-text {
+  margin-bottom: 10px;
+  background-color: #FFF;
+  text-align: center; }
+
+.textarea-wrapper textarea, .backdrop {
+  width: 1000px;
+  height: 250px; }
+
+.offset-tool-wrapper input, .offset-tool-wrapper textarea {
+  font-size: 1.33em; }
+
+.content-header {
+  display: flex; }
+  .content-header label + input {
+    margin-left: 8px; }
+  .content-header div + div {
+    margin-left: 75px; }
+
+.content-main {
+  margin-top: 40px; }
+
+.search-row {
+  display: flex;
+  border-bottom: 1px solid #F4F4F4;
+  padding: 20px 0; }
+  .search-row label + input, .search-row label + textarea, .search-row label + .container {
+    display: block;
+    margin-top: 6px; }
+  .search-row > div + div {
+    margin-left: 40px; }
+
+.button-wrapper {
+  align-self: center;
+  margin-left: 40px; }
+  .button-wrapper button {
+    height: 30px;
+    width: 30px; }
+    .button-wrapper button + button {
+      margin-left: 10px; }
+
+.btn-add-row {
+  display: none; }
+
+.content-main .search-row:only-child .btn-remove-row {
+  display: none; }
+
+.content-main .search-row:last-child .btn-add-row {
+  display: inline-block; }
+
+.backdrop {
+  overflow: auto;
+  background-color: #fff;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none; }
+
+.highlights {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: transparent;
+  font-size: 1.33em;
+  font-family: monospace; }
+
+mark {
+  color: transparent;
+  background-color: #d4e9ab; }
+
+.data {
+  background-color: transparent; }
+
+textarea {
+  margin: 0;
+  border-radius: 0;
+  z-index: 2;
+  overflow: auto;
+  display: block;
+  position: relative;
+  resize: none; }
+
+.notes-wrapper textarea {
+  width: 350px;
+  height: 250px; }
+
+.value-action-buttons {
+  margin-top: 10px; }
+  .value-action-buttons .action-button {
+    display: block;
+    padding: 10px; }
+    .value-action-buttons .action-button + .action-button {
+      margin-top: 10px; }
+
+.offset-match {
+  background-color: #e98819; }
