@@ -32,7 +32,7 @@ function buildSearchRow() {
   
   const valueLabel = document.createElement('label');
   valueLabel.for = `value-${searchRowIndex}`;
-  valueLabel.textContent = 'Value';
+  valueLabel.textContent = 'Search value';
 
   const valueActionButtons = document.createElement('div');
   valueActionButtons.classList.add('value-action-buttons');
