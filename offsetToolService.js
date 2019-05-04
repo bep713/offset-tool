@@ -33,8 +33,6 @@ function buildSearchRow() {
     }
   });
 
-  const offScreenLength = document.querySelector('.content-header-offscreen ')
-
   const searchRow = document.createElement('div');
   searchRow.classList.add('search-row');
 
@@ -103,6 +101,18 @@ function buildSearchRow() {
   const dataTextarea = document.createElement('textarea');
   dataTextarea.classList.add('data');
   dataTextarea.id = `data-${searchRowIndex}`;
+
+  dataTextarea.addEventListener('click', function () {
+    setCurrentOffset(this);
+  });
+
+  dataTextarea.addEventListener('keydown', function (e) {
+    setCurrentOffset(this);
+  });
+
+  dataTextarea.addEventListener('blur', function (e) {
+    clearCurrentOffset();
+  });
 
   dataTextarea.addEventListener('input', function () {
     runSearch();
@@ -216,6 +226,23 @@ function buildSearchRow() {
 
 function removeSearchRow(searchRow) {
   searchRow.remove();
+};
+
+function setCurrentOffset(textarea) {
+  setTimeout(function () {
+    const currentOffset = textarea.selectionStart;
+    const currentOffsetElements = document.querySelectorAll('.content-header .current-offset');
+    currentOffsetElements.forEach((currentOffsetElement) => {
+      currentOffsetElement.value = currentOffset;
+    });
+  }, 100);
+};
+
+function clearCurrentOffset() {
+  const currentOffsetElements = document.querySelectorAll('.content-header .current-offset');
+    currentOffsetElements.forEach((currentOffsetElement) => {
+      currentOffsetElement.value = null;
+    });
 };
 
 function runSearch() {
